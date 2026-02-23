@@ -1,7 +1,7 @@
 {
   "expo": {
     "name": "business-directory",
-    "slug": "business-directory",
+    "slug": "businessdirectory",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/images/icon.png",
@@ -13,20 +13,28 @@
     },
     "android": {
       "adaptiveIcon": {
-        "backgroundColor": "#E6F4FE",
-        "foregroundImage": "./assets/images/android-icon-foreground.png",
+        "foregroundImage": "./assets/images/adaptive-icon.png",
+        "backgroundColor": "#4F4F4F",
         "backgroundImage": "./assets/images/android-icon-background.png",
         "monochromeImage": "./assets/images/android-icon-monochrome.png"
       },
       "edgeToEdgeEnabled": true,
-      "predictiveBackGestureEnabled": false
+      "package": "com.tazorganization.businessdirectory"
     },
     "web": {
-      "output": "static",
-      "favicon": "./assets/images/favicon.png"
-    },
+      "output": "static"
+    }
+,
     "plugins": [
       "expo-router",
+      [
+        "expo-image-picker",
+        {
+          "photosPermission": "The app accesses your photos to let you share them with your friends.",
+          "cameraPermission": "The app accesses your camera to let you take photos for your business listing.",
+          "microphonePermission": false
+        }
+      ],
       [
         "expo-splash-screen",
         {
@@ -38,11 +46,20 @@
             "backgroundColor": "#000000"
           }
         }
-      ]
+      ],
+      "expo-secure-store",
+      "expo-web-browser"
     ],
     "experiments": {
       "typedRoutes": true,
       "reactCompiler": true
-    }
+    },
+    "extra": {
+      "router": {},
+      "eas": {
+        "projectId": "fee24975-aa41-457e-abb8-fc773613867a"
+      }
+    },
+    "owner": "tayzar1990s-organization"
   }
 }
