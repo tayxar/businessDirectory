@@ -7,10 +7,13 @@ import Slider from '../../Components/Home/Slider';
 
 export default function Home() {
   const [refreshing, setRefreshing] = useState(false);
+  const [refreshKey, setRefreshKey] = useState(0); 
 
    const onRefresh = async () => {
     setRefreshing(true);
     // Trigger re-fetch logic here (e.g. force PopularBusiness to reload)
+    setRefreshKey(prev => prev + 1);
+    
     setRefreshing(false);
   };
 
@@ -23,11 +26,11 @@ export default function Home() {
       {/* Header */}
 <Header></Header>
       {/* Slider */}
-<Slider/>
+<Slider key={'slider-${refreshKey}'}/>
       {/* Category */}
-<Category/>
+<Category key={'cat-${refereshKey}'}/>
       {/* Popular Business List */}
-      <PopularBusiness/>
+      <PopularBusiness key={'biz-${refreshKey}'}/>
       <View
       style={{height:50}}
       ></View>

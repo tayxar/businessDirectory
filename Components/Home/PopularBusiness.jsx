@@ -5,16 +5,17 @@ import { db } from '../../configs/FirebaseConfig';
 import { Colors } from '../../constants/Colors';
 import PopularBusinessCard from './PopularBusinessCard';
 
-export default function PopularBusiness() {
+export default function PopularBusiness({refreshing}) {
 
     const[businessList,setBusinessList] = useState([]);
 
     useEffect( ()=>{
+      if(refreshing){
         GetBusinessList();
-
+}
     }
         
-        ,[])
+        ,[refreshing]);
 
     const GetBusinessList=async()=>{
         setBusinessList([]);
