@@ -9,6 +9,10 @@ export default function PopularBusiness({refreshing}) {
 
     const[businessList,setBusinessList] = useState([]);
 
+ useEffect(() => {
+        GetBusinessList();
+    }, []);
+
     useEffect( ()=>{
       if(refreshing){
         GetBusinessList();

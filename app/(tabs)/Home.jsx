@@ -26,11 +26,12 @@ export default function Home() {
       {/* Header */}
 <Header></Header>
       {/* Slider */}
-<Slider key={'slider-${refreshKey}'}/>
+<Slider/>
       {/* Category */}
-<Category key={'cat-${refereshKey}'}/>
+<Category />
       {/* Popular Business List */}
-      <PopularBusiness key={'biz-${refreshKey}'}/>
+     {/*  <PopularBusiness key={'biz-${refreshKey}'}/> */}
+      <PopularBusiness refreshing={refreshing} />
       <View
       style={{height:50}}
       ></View>
