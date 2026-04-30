@@ -12,9 +12,11 @@ export default function Home() {
    const onRefresh = async () => {
     setRefreshing(true);
     // Trigger re-fetch logic here (e.g. force PopularBusiness to reload)
-    setRefreshKey(prev => prev + 1);
+        setTimeout(() => {
+        setRefreshing(false);
+    }, 1000);
     
-    setRefreshing(false);
+    
   };
 
 
